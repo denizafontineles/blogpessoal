@@ -36,15 +36,12 @@ public class Postagem {
 	
 	@ManyToOne // várias postagens pode pertencer a 1 tema (N:1)
 	@JsonIgnoreProperties("postagem") //Para que as postagens não gere um loop infinito nas requisições
-	
 	private Tema tema;
 	
-	public Tema getTema() {
-		return tema;
-	}
-	public void setTema(Tema tema) {
-		this.tema = tema;
-	}
+	@ManyToOne // várias postagens pode pertencer a 1 usuário (N:1)
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
+	
 	public Long getId() {
 		return id;
 	}
@@ -69,4 +66,17 @@ public class Postagem {
 	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
+	public Tema getTema() {
+		return tema;
+	}
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 }
