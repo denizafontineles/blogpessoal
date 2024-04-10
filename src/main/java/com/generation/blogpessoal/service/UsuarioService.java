@@ -19,6 +19,8 @@ import com.generation.blogpessoal.security.JwtService;
 @Service
 public class UsuarioService {
 
+	//Organizar métodos de manipulação de recursos e definir as regras de negócios da aplicação
+	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
